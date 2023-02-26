@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>books</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+ <div class="container">
+	<h1>categorys</h1>
+  <table class="table table-bordered">
+  <thead>
+	
+	<tr>
+			<th>Name</th>
+			<th>Id</th>
+			
+		</tr>
+		</thead>
+		<tbody>
+		
+		<tr th:each="category : ${categorys}">
+			<td th:text="${category.name}">name</td>
+			<td th:text="${category.categoryId}">id</td>
+			
+			
+			
+		</tr>
+		</tbody>
+	
+	</table>
+	<a href="/addcategory" class = "btn btn-primary"> Add new book</a>
+</div>
+</body>
+</html>
