@@ -10,6 +10,8 @@
 	<form action="#" th:action="@{/savecategory}"  th:object= ${categorys} method="post">
 	<p>Name: <input type="text" th:field="${categorys.name}" /></p>
 	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+	
+	<a href ="/categorylist" class = "btn btn-primary"> Show existing categories</a>
 	</form>
 	</div>
     
