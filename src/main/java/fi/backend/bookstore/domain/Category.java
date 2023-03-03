@@ -2,6 +2,7 @@ package fi.backend.bookstore.domain;
 
 import java.util.List;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -19,7 +20,7 @@ public class Category {
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-	@JsonIgnoreProperties ("categoriesjson")
+	@JsonIgnoreProperties ("categories")
 	private List<Book> books;
 
 	public Category() {}

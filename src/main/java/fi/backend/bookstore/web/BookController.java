@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -36,16 +37,22 @@ public class BookController {
 
 	}
 
-	// return all existing books in JSON
-	@RequestMapping(value = "/booksjson", method = RequestMethod.GET)
+	// return all existing books in JSON RESTful
+	@RequestMapping(value =  "/booksjson", method = RequestMethod.GET)
 	public @ResponseBody List<Book> bookListRest() {
 		return (List<Book>) repository.findAll();
 	}
-	
+		
+	// RESTful find by id
 	@RequestMapping (value ="/booksjson/{id}", method = RequestMethod.GET)
 	public @ResponseBody Optional <Book> findBookRest(@PathVariable("id") Long id){
 		return repository.findById(id);
 		
+	}
+	//RESTful save new books
+	@RequestMapping (value = "/booksjson", method= RequestMethod.POST)
+	public @ResponseBody Book saveBookRest(@RequestBody Book book) {
+		return repository.save(book);
 	}
 
 	// add new books to bookstore
