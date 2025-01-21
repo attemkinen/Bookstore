@@ -80,11 +80,20 @@ public class BookController {
 		return "redirect:../books";
 	}
 	// edit existing books
-	// todo make it work :)
-	@RequestMapping(value = "/editbook/{id}", method = RequestMethod.POST)
-	public String editBook(@PathVariable("id") Long bookId, Model model) {
-		repository.findById(bookId);
+
+	@RequestMapping (value = "/editBook/{id}", method = RequestMethod.GET)
+	public String editBook(@PathVariable("id") Long id, Model model, Book book) {
+		model.addAttribute("book", repository.findById(id));
+		model.addAttribute("categories", crepository.findAll());
+		model.addAttribute("bookId", id);
 		return "editbook";
 	}
+	
+	@RequestMapping(value = "/updateBook/{id}", method = RequestMethod.POST)
+	public String updateBook(@PathVariable("id") Long id, Model model, Book book){
+		repository.save(book);
+		return "redirect:../books";
+	}
+
 
 }

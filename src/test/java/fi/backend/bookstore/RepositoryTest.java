@@ -2,6 +2,7 @@ package fi.backend.bookstore;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ public class RepositoryTest {
 	private CategoryRepository crepository;
 
 	@Test // testing find method 
-	public void FindByAuthorWorking() {
+	public void FindByAuthorW() {
 		List<Book> books = brepository.findByAuthor("Atte Mäkinen");
 		assertThat(books).hasSize(1);
 
@@ -44,4 +45,8 @@ public class RepositoryTest {
 		 brepository.save(book);
 		 assertThat(book.getId()).isNotNull();
 		}
+	
+	
+	
+	
 }
