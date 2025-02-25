@@ -14,6 +14,12 @@ ${BOOK_PRICE}       20.00
 ${BOOK_PUBLISHED}       2025
 ${BOOK_CATEGORY}        Drama
 
+${EDITED_TITLE}       Muokattu kirja
+${EDITED_AUTHOR}      Matti Muokkaaja
+${EDITED_ISBN}        111-1-11111-1        
+${EDITED_PRICE}       25.00
+${EDITED_PUBLISHED}       2024
+
 *** Test Cases ***
 
 Login Before Adding New Book
@@ -26,6 +32,8 @@ Login Before Adding New Book
     Click Button    xpath=//input[@type='submit']
     ${welcome_text}=    Get Text    xpath=//h3
     Should Contain    ${welcome_text}    Welcome ${USERNAME}
+
+
 
 Add New Book
 
@@ -44,7 +52,41 @@ Add New Book
     Click Button        xpath=//input[@type='submit']
     Wait Until Page Contains    ${BOOK_TITLE}
 
+    
+Edit Newest Book
+
+    ${last_book_edit_link}=    Get Element Attribute    xpath=(//a[contains(@href, '/edit')])[last()]    href
+    Go To    ${last_book_edit_link}
+
+    # Päivitä pelin tiedot
+    Input Text      xpath=//input[@name='title']        ${EDITED_TITLE}    
+    Input Text      xpath=//input[@name='author']       ${EDITED_AUTHOR}
+    Input Text      xpath=//input[@name='isbn']         ${EDITED_ISBN}
+    Input Text      xpath=//input[@name='price']        ${EDITED_PRICE}
+    Input Text      xpath=//input[@name='published']    ${EDITED_PUBLISHED}
+    Select From List By Label    id=category    ${BOOK_CATEGORY}        ${BOOK_CATEGORY}
+
+    # Lähetä muokattu lomake
+    Click Button    xpath=//input[@type='submit']
+
+    # Varmista, että muokatut tiedot näkyvät pelilistalla
+    Wait Until Page Contains    ${EDITED_TITLE}
+
+
+Delete Newest Book
+    [Documentation]   Poistaa juuri muokatun kirjan listalta
+
+    # Etsi uusimman muokatun kirjan delete-nappi ja paina sitä
+    Click Link    xpath=(//a[contains(@href, '/deletebook')])[last()]
+
+    # Varmista, että kirja on poistettu
+    Reload Page
+    Wait Until Page Does Not Contain    ${EDITED_TITLE}
     Close Browser
+
+    
+    
+
 
     
 
