@@ -29,7 +29,9 @@ ${EDITED_YEAR}      2024
 *** Test Cases ***
 
 Admin Login
+
     [Documentation]  Logs in as an admin user to access book management features.
+
     Open Browser    ${LOGIN_URL}    Chrome
     Input Text      name=username   ${ADMIN_USERNAME}
     Input Text      name=password   ${ADMIN_PASSWORD}
@@ -39,7 +41,9 @@ Admin Login
     Should Contain    ${welcome_text}    Welcome ${ADMIN_USERNAME}
 
 Add New Book
+
     [Documentation]  Adds a new book with predefined details.
+
     Click Link      xpath=//a[contains(@href, '/newbook')] 
     Input Text      xpath=//input[@name='title']        ${BOOK_TITLE}    
     Input Text      xpath=//input[@name='author']       ${BOOK_AUTHOR}
@@ -51,7 +55,9 @@ Add New Book
     Wait Until Page Contains    ${BOOK_TITLE}
 
 Edit Most Recent Book
+
     [Documentation]  Edits the most recently added book by navigating to its edit page and updating details.
+
     ${last_book_edit_link}=    Get Element Attribute    xpath=(//a[contains(@href, '/edit')])[last()]    href
     Go To    ${last_book_edit_link}
     Input Text      xpath=//input[@name='title']        ${EDITED_TITLE}    
@@ -64,7 +70,9 @@ Edit Most Recent Book
     Wait Until Page Contains    ${EDITED_TITLE}
 
 Delete Most Recent Book
+
     [Documentation]  Deletes the most recently edited book from the list.
+    
     Click Link    xpath=(//a[contains(@href, '/deletebook')])[last()]
     Reload Page
     Wait Until Page Does Not Contain    ${EDITED_TITLE}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Category</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Category</h1>
+        <div class="formdiv">
+            <form th:object="${category}" th:action="@{/updateCategory/{id}(id=${category.categoryId})}" method="post">
+                <label for="name">Category Name</label><br>
+                <input type="text" id="name" th:field="*{name}" required>
+                <div style="margin: 10px 0;"></div>
+
+                <input type="submit" value="Update" class="btn btn-success">
+            </form>
+            <a href="/categorylist" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</body>
+</html>
