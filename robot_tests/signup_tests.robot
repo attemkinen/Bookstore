@@ -18,8 +18,8 @@ ${SHORT_PASSWORD}    123
 # Expected Messages
 ${MSG_SIGN_OUT}       You have been logged out.
 ${MSG_LOGIN_DENIED}   Invalid username and password.
-${MSG_USERNAME_EXISTS} Username already exists
-${MSG_INVALID_PASSWORD} size must be between 7 and 30
+${MSG_USERNAME_EXISTS}      Username already exists 
+${MSG_INVALID_PASSWORD}     size must be between 7 and 30
 
 *** Test Cases ***
 
