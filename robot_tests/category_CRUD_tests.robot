@@ -68,6 +68,8 @@ Delete Most Recent Category
 
 Reject Category With Invalid Numerical Characters
 
+    [Documentation]     Checks that new category cannot be saved with only numerical characters
+
     Click Link      xpath=(//a[contains(@href, '/addcategory')])
     Input Text      xpath=//input[@name='name']     ${NUMERICAL_NAME}        
     Click Button    xpath=//input[@type='submit']
@@ -78,6 +80,8 @@ Reject Category With Invalid Numerical Characters
 
 Reject Category Without Characters
 
+    [Documentation]     Checks that new category cannot be saved without any characters.
+
     Input Text      xpath=//input[@name='name']    ${EMPTY_CHAR}       
     Click Button    xpath=//input[@type='submit']
     Wait Until Page Contains        ${EMPTY_NAME_MESSAGE}  
@@ -87,6 +91,8 @@ Reject Category Without Characters
     
 
 Reject Category With Invalid Characters
+
+    [Documentation]     Checks that new category cannot be saved with invalid characters.
 
     Input Text      xpath=//input[@name='name']    ${INVALID_CHAR}       
     Click Button    xpath=//input[@type='submit']

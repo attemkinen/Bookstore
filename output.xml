@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.0 on win32)" generated="20250227 11:57:07.002" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.0 on win32)" generated="20250227 13:38:15.990" rpa="false" schemaversion="4">
 <suite id="s1" name="category CRUD tests" source="C:\Users\attem\eclipse-workspace\bookstore\robot_tests\category_CRUD_tests.robot">
 <test id="s1-t1" name="Admin Login" line="28">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${LOGIN_URL}</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250227 11:57:07.272" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/login'.</msg>
-<status status="PASS" starttime="20250227 11:57:07.272" endtime="20250227 11:57:09.467"/>
+<msg timestamp="20250227 13:38:16.271" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20250227 13:38:16.271" endtime="20250227 13:38:18.696"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name=username</arg>
 <arg>${ADMIN_USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:09.470" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
-<status status="PASS" starttime="20250227 11:57:09.468" endtime="20250227 11:57:09.647"/>
+<msg timestamp="20250227 13:38:18.699" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20250227 13:38:18.696" endtime="20250227 13:38:18.919"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name=password</arg>
 <arg>${ADMIN_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:09.649" level="INFO">Typing text 'admin' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20250227 11:57:09.648" endtime="20250227 11:57:09.782"/>
+<msg timestamp="20250227 13:38:18.919" level="INFO">Typing text 'admin' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20250227 13:38:18.919" endtime="20250227 13:38:19.120"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:09.784" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
-<status status="PASS" starttime="20250227 11:57:09.783" endtime="20250227 11:57:10.012"/>
+<msg timestamp="20250227 13:38:19.122" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20250227 13:38:19.121" endtime="20250227 13:38:19.419"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${welcome_text}</var>
 <arg>xpath=//h3</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.097" level="INFO">${welcome_text} = Welcome admin</msg>
-<status status="PASS" starttime="20250227 11:57:10.013" endtime="20250227 11:57:10.097"/>
+<msg timestamp="20250227 13:38:19.559" level="INFO">${welcome_text} = Welcome admin</msg>
+<status status="PASS" starttime="20250227 13:38:19.421" endtime="20250227 13:38:19.559"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${welcome_text}</arg>
 <arg>Welcome ${ADMIN_USERNAME}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20250227 11:57:10.098" endtime="20250227 11:57:10.098"/>
+<status status="PASS" starttime="20250227 13:38:19.560" endtime="20250227 13:38:19.561"/>
 </kw>
 <doc>Logs in as an admin user to access category management features.</doc>
-<status status="PASS" starttime="20250227 11:57:07.271" endtime="20250227 11:57:10.099"/>
+<status status="PASS" starttime="20250227 13:38:16.269" endtime="20250227 13:38:19.561"/>
 </test>
 <test id="s1-t2" name="Add New Category" line="40">
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>xpath=//a[contains(@href, '/addcategory')]</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.101" level="INFO">Clicking link 'xpath=//a[contains(@href, '/addcategory')]'.</msg>
-<status status="PASS" starttime="20250227 11:57:10.101" endtime="20250227 11:57:10.263"/>
+<msg timestamp="20250227 13:38:19.566" level="INFO">Clicking link 'xpath=//a[contains(@href, '/addcategory')]'.</msg>
+<status status="PASS" starttime="20250227 13:38:19.565" endtime="20250227 13:38:19.812"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@name='name']</arg>
 <arg>${CATEGORY_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.266" level="INFO">Typing text 'Test Category' into text field 'xpath=//input[@name='name']'.</msg>
-<status status="PASS" starttime="20250227 11:57:10.264" endtime="20250227 11:57:10.446"/>
+<msg timestamp="20250227 13:38:19.815" level="INFO">Typing text 'Test Category' into text field 'xpath=//input[@name='name']'.</msg>
+<status status="PASS" starttime="20250227 13:38:19.814" endtime="20250227 13:38:19.989"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.448" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
-<status status="PASS" starttime="20250227 11:57:10.447" endtime="20250227 11:57:10.576"/>
+<msg timestamp="20250227 13:38:19.992" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20250227 13:38:19.991" endtime="20250227 13:38:20.133"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${CATEGORY_NAME}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20250227 11:57:10.577" endtime="20250227 11:57:10.606"/>
+<status status="PASS" starttime="20250227 13:38:20.134" endtime="20250227 13:38:20.166"/>
 </kw>
 <doc>Adds a new category with predefined details.</doc>
-<status status="PASS" starttime="20250227 11:57:10.100" endtime="20250227 11:57:10.607"/>
+<status status="PASS" starttime="20250227 13:38:19.563" endtime="20250227 13:38:20.167"/>
 </test>
 <test id="s1-t3" name="Edit Most Recent Category" line="49">
 <kw name="Get Element Attribute" library="SeleniumLibrary">
@@ -79,165 +79,168 @@
 <arg>xpath=(//a[contains(@href, '/editCategory')])[last()]</arg>
 <arg>href</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.634" level="INFO">${last_category_edit_link} = http://localhost:8080/editCategory/9</msg>
-<status status="PASS" starttime="20250227 11:57:10.608" endtime="20250227 11:57:10.634"/>
+<msg timestamp="20250227 13:38:20.196" level="INFO">${last_category_edit_link} = http://localhost:8080/editCategory/4</msg>
+<status status="PASS" starttime="20250227 13:38:20.168" endtime="20250227 13:38:20.196"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${last_category_edit_link}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20250227 11:57:10.635" level="INFO">Opening url 'http://localhost:8080/editCategory/9'</msg>
-<status status="PASS" starttime="20250227 11:57:10.635" endtime="20250227 11:57:10.692"/>
+<msg timestamp="20250227 13:38:20.196" level="INFO">Opening url 'http://localhost:8080/editCategory/4'</msg>
+<status status="PASS" starttime="20250227 13:38:20.196" endtime="20250227 13:38:20.260"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@name='name']</arg>
 <arg>${EDITED_CATEGORY}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.694" level="INFO">Typing text 'Updated Category' into text field 'xpath=//input[@name='name']'.</msg>
-<status status="PASS" starttime="20250227 11:57:10.693" endtime="20250227 11:57:10.819"/>
+<msg timestamp="20250227 13:38:20.262" level="INFO">Typing text 'Updated Category' into text field 'xpath=//input[@name='name']'.</msg>
+<status status="PASS" starttime="20250227 13:38:20.261" endtime="20250227 13:38:20.398"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.820" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
-<status status="PASS" starttime="20250227 11:57:10.819" endtime="20250227 11:57:10.929"/>
+<msg timestamp="20250227 13:38:20.398" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20250227 13:38:20.398" endtime="20250227 13:38:20.542"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${EDITED_CATEGORY}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20250227 11:57:10.930" endtime="20250227 11:57:10.956"/>
+<status status="PASS" starttime="20250227 13:38:20.542" endtime="20250227 13:38:20.579"/>
 </kw>
 <doc>Edits the most recently added category by navigating to its edit page and updating details.</doc>
-<status status="PASS" starttime="20250227 11:57:10.608" endtime="20250227 11:57:10.956"/>
+<status status="PASS" starttime="20250227 13:38:20.168" endtime="20250227 13:38:20.579"/>
 </test>
 <test id="s1-t4" name="Delete Most Recent Category" line="59">
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>xpath=(//a[contains(@href, '/deletecategory')])[last()]</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:10.958" level="INFO">Clicking link 'xpath=(//a[contains(@href, '/deletecategory')])[last()]'.</msg>
-<status status="PASS" starttime="20250227 11:57:10.958" endtime="20250227 11:57:11.114"/>
+<msg timestamp="20250227 13:38:20.582" level="INFO">Clicking link 'xpath=(//a[contains(@href, '/deletecategory')])[last()]'.</msg>
+<status status="PASS" starttime="20250227 13:38:20.581" endtime="20250227 13:38:20.809"/>
 </kw>
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20250227 11:57:11.114" endtime="20250227 11:57:11.159"/>
+<status status="PASS" starttime="20250227 13:38:20.810" endtime="20250227 13:38:20.871"/>
 </kw>
 <kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
 <arg>${EDITED_CATEGORY}</arg>
 <doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20250227 11:57:11.160" endtime="20250227 11:57:11.171"/>
+<status status="PASS" starttime="20250227 13:38:20.872" endtime="20250227 13:38:20.886"/>
 </kw>
 <doc>Deletes the most recently edited category from the list.</doc>
-<status status="PASS" starttime="20250227 11:57:10.957" endtime="20250227 11:57:11.172"/>
+<status status="PASS" starttime="20250227 13:38:20.580" endtime="20250227 13:38:20.887"/>
 </test>
 <test id="s1-t5" name="Reject Category With Invalid Numerical Characters" line="69">
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>xpath=(//a[contains(@href, '/addcategory')])</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.175" level="INFO">Clicking link 'xpath=(//a[contains(@href, '/addcategory')])'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.174" endtime="20250227 11:57:11.318"/>
+<msg timestamp="20250227 13:38:20.892" level="INFO">Clicking link 'xpath=(//a[contains(@href, '/addcategory')])'.</msg>
+<status status="PASS" starttime="20250227 13:38:20.891" endtime="20250227 13:38:21.065"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@name='name']</arg>
 <arg>${NUMERICAL_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.320" level="INFO">Typing text '123' into text field 'xpath=//input[@name='name']'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.319" endtime="20250227 11:57:11.440"/>
+<msg timestamp="20250227 13:38:21.066" level="INFO">Typing text '123' into text field 'xpath=//input[@name='name']'.</msg>
+<status status="PASS" starttime="20250227 13:38:21.066" endtime="20250227 13:38:21.142"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.441" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.441" endtime="20250227 11:57:11.524"/>
+<msg timestamp="20250227 13:38:21.142" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20250227 13:38:21.142" endtime="20250227 13:38:21.222"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${WRONG_NAME_MESSAGE}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20250227 11:57:11.525" endtime="20250227 11:57:11.550"/>
+<status status="PASS" starttime="20250227 13:38:21.222" endtime="20250227 13:38:21.246"/>
 </kw>
 <kw name="Get Location" library="SeleniumLibrary">
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<msg timestamp="20250227 11:57:11.558" level="INFO">${current_url} = http://localhost:8080/savecategory</msg>
-<status status="PASS" starttime="20250227 11:57:11.551" endtime="20250227 11:57:11.558"/>
+<msg timestamp="20250227 13:38:21.251" level="INFO">${current_url} = http://localhost:8080/savecategory</msg>
+<status status="PASS" starttime="20250227 13:38:21.246" endtime="20250227 13:38:21.251"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${current_url}</arg>
 <arg>${SAVE_CATEGORY_URL}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20250227 11:57:11.558" endtime="20250227 11:57:11.558"/>
+<status status="PASS" starttime="20250227 13:38:21.252" endtime="20250227 13:38:21.252"/>
 </kw>
-<status status="PASS" starttime="20250227 11:57:11.172" endtime="20250227 11:57:11.559"/>
+<doc>Checks that new category cannot be saved with only numerical characters</doc>
+<status status="PASS" starttime="20250227 13:38:20.889" endtime="20250227 13:38:21.252"/>
 </test>
-<test id="s1-t6" name="Reject Category Without Characters" line="80">
+<test id="s1-t6" name="Reject Category Without Characters" line="81">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@name='name']</arg>
 <arg>${EMPTY_CHAR}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.561" level="INFO">Typing text '' into text field 'xpath=//input[@name='name']'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.560" endtime="20250227 11:57:11.643"/>
+<msg timestamp="20250227 13:38:21.256" level="INFO">Typing text '' into text field 'xpath=//input[@name='name']'.</msg>
+<status status="PASS" starttime="20250227 13:38:21.255" endtime="20250227 13:38:21.348"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.644" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.643" endtime="20250227 11:57:11.716"/>
+<msg timestamp="20250227 13:38:21.349" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20250227 13:38:21.348" endtime="20250227 13:38:21.444"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${EMPTY_NAME_MESSAGE}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20250227 11:57:11.717" endtime="20250227 11:57:11.736"/>
+<status status="PASS" starttime="20250227 13:38:21.445" endtime="20250227 13:38:21.467"/>
 </kw>
 <kw name="Get Location" library="SeleniumLibrary">
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<msg timestamp="20250227 11:57:11.743" level="INFO">${current_url} = http://localhost:8080/savecategory</msg>
-<status status="PASS" starttime="20250227 11:57:11.737" endtime="20250227 11:57:11.743"/>
+<msg timestamp="20250227 13:38:21.475" level="INFO">${current_url} = http://localhost:8080/savecategory</msg>
+<status status="PASS" starttime="20250227 13:38:21.467" endtime="20250227 13:38:21.475"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${current_url}</arg>
 <arg>${SAVE_CATEGORY_URL}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20250227 11:57:11.744" endtime="20250227 11:57:11.744"/>
+<status status="PASS" starttime="20250227 13:38:21.475" endtime="20250227 13:38:21.475"/>
 </kw>
-<status status="PASS" starttime="20250227 11:57:11.560" endtime="20250227 11:57:11.744"/>
+<doc>Checks that new category cannot be saved without any characters.</doc>
+<status status="PASS" starttime="20250227 13:38:21.254" endtime="20250227 13:38:21.476"/>
 </test>
-<test id="s1-t7" name="Reject Category Without Characters" line="92">
+<test id="s1-t7" name="Reject Category With Invalid Characters" line="93">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@name='name']</arg>
 <arg>${INVALID_CHAR}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.746" level="INFO">Typing text '!¤&amp;$' into text field 'xpath=//input[@name='name']'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.746" endtime="20250227 11:57:11.818"/>
+<msg timestamp="20250227 13:38:21.477" level="INFO">Typing text '!¤&amp;$' into text field 'xpath=//input[@name='name']'.</msg>
+<status status="PASS" starttime="20250227 13:38:21.477" endtime="20250227 13:38:21.557"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250227 11:57:11.819" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
-<status status="PASS" starttime="20250227 11:57:11.819" endtime="20250227 11:57:11.900"/>
+<msg timestamp="20250227 13:38:21.559" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20250227 13:38:21.558" endtime="20250227 13:38:21.645"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${WRONG_NAME_MESSAGE}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20250227 11:57:11.901" endtime="20250227 11:57:11.915"/>
+<status status="PASS" starttime="20250227 13:38:21.645" endtime="20250227 13:38:21.667"/>
 </kw>
 <kw name="Get Location" library="SeleniumLibrary">
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<msg timestamp="20250227 11:57:11.920" level="INFO">${current_url} = http://localhost:8080/savecategory</msg>
-<status status="PASS" starttime="20250227 11:57:11.915" endtime="20250227 11:57:11.920"/>
+<msg timestamp="20250227 13:38:21.676" level="INFO">${current_url} = http://localhost:8080/savecategory</msg>
+<status status="PASS" starttime="20250227 13:38:21.667" endtime="20250227 13:38:21.676"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${current_url}</arg>
 <arg>${SAVE_CATEGORY_URL}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20250227 11:57:11.921" endtime="20250227 11:57:11.921"/>
+<status status="PASS" starttime="20250227 13:38:21.677" endtime="20250227 13:38:21.677"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20250227 11:57:11.921" endtime="20250227 11:57:14.259"/>
+<status status="PASS" starttime="20250227 13:38:21.677" endtime="20250227 13:38:23.935"/>
 </kw>
-<status status="PASS" starttime="20250227 11:57:11.745" endtime="20250227 11:57:14.260"/>
+<doc>Checks that new category cannot be saved with invalid characters.</doc>
+<status status="PASS" starttime="20250227 13:38:21.476" endtime="20250227 13:38:23.935"/>
 </test>
-<status status="PASS" starttime="20250227 11:57:07.004" endtime="20250227 11:57:14.261"/>
+<status status="PASS" starttime="20250227 13:38:15.990" endtime="20250227 13:38:23.935"/>
 </suite>
 <statistics>
 <total>
@@ -250,6 +253,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20250227 11:57:11.745" level="WARN">Multiple tests with name 'Reject Category Without Characters' executed in suite 'category CRUD tests'.</msg>
 </errors>
 </robot>
