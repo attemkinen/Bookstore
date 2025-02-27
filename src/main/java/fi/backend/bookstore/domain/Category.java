@@ -23,7 +23,7 @@ public class Category {
     private Long categoryId;
 
     @NotBlank(message = "Kategorian nimi ei voi olla tyhjä")  // Varmistaa, ettei nimi ole tyhjä
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Kategorian nimi saa sisältää vain kirjaimia") // Sallitut merkit
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Kategorian nimi saa sisältää vain kirjaimia") // Sallitut merkit
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 

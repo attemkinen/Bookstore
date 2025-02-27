@@ -77,3 +77,6 @@ Delete Most Recent Book
     Reload Page
     Wait Until Page Does Not Contain    ${EDITED_TITLE}
     Close Browser
+
+
+

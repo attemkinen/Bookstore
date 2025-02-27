@@ -6,13 +6,19 @@ Library     SeleniumLibrary
 ${BASE_URL}           http://localhost:8080
 ${LOGIN_URL}          ${BASE_URL}/login
 ${CATEGORY_FORM_URL}  ${BASE_URL}/newcategory
+${SAVE_CATEGORY_URL}    ${BASE_URL}/savecategory     
 
 # Admin Credentials
 ${ADMIN_USERNAME}     admin
 ${ADMIN_PASSWORD}     admin
 
 # Category Data (Original)
-${CATEGORY_NAME}      Test Category
+${CATEGORY_NAME}        Test Category
+${WRONG_NAME_MESSAGE}       Kategorian nimi saa sisältää vain kirjaimia
+${EMPTY_NAME_MESSAGE}       Kategorian nimi ei voi olla tyhjä
+${NUMERICAL_NAME}       123        
+${EMPTY_CHAR}
+${INVALID_CHAR}     !¤&$
 
 # Category Data (Edited)
 ${EDITED_CATEGORY}    Updated Category
@@ -57,4 +63,35 @@ Delete Most Recent Category
     Click Link    xpath=(//a[contains(@href, '/deletecategory')])[last()]
     Reload Page
     Wait Until Page Does Not Contain    ${EDITED_CATEGORY}
+    
+   
+
+Reject Category With Invalid Numerical Characters
+
+    Click Link      xpath=(//a[contains(@href, '/addcategory')])
+    Input Text      xpath=//input[@name='name']     ${NUMERICAL_NAME}        
+    Click Button    xpath=//input[@type='submit']
+    Wait Until Page Contains        ${WRONG_NAME_MESSAGE}
+    ${current_url}=  Get Location
+    Should Be Equal  ${current_url}  ${SAVE_CATEGORY_URL}  
+
+
+Reject Category Without Characters
+
+    Input Text      xpath=//input[@name='name']    ${EMPTY_CHAR}       
+    Click Button    xpath=//input[@type='submit']
+    Wait Until Page Contains        ${EMPTY_NAME_MESSAGE}  
+    ${current_url}=  Get Location
+    Should Be Equal  ${current_url}  ${SAVE_CATEGORY_URL}  
+
+    
+
+Reject Category With Invalid Characters
+
+    Input Text      xpath=//input[@name='name']    ${INVALID_CHAR}       
+    Click Button    xpath=//input[@type='submit']
+    Wait Until Page Contains        ${WRONG_NAME_MESSAGE}  
+    ${current_url}=  Get Location
+    Should Be Equal  ${current_url}  ${SAVE_CATEGORY_URL}  
+
     Close Browser
