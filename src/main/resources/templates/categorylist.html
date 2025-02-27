@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="category : ${categorys}">
+                <tr th:each="category : ${category}">
                     <td th:text="${category.name}">name</td>
                     <td th:text="${category.categoryId}">id</td>
                     <td><a th:href="@{/editCategory/{id}(id=${category.categoryId})}" class="btn btn-xs btn-warning">Edit</a></td>

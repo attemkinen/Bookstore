@@ -5,15 +5,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>categorys</h1>
-	<div>
-	<form action="#" th:action="@{/savecategory}"  th:object= ${categorys} method="post">
-	<p>Name: <input type="text" th:field="${categorys.name}" /></p>
-	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
-	
-	<a href ="/categorylist" class = "btn btn-primary"> Show existing categories</a>
-	</form>
-	</div>
+    <h1>Category Form</h1>
+    
+    <div>
+        <form action="#" th:action="@{/savecategory}" th:object="${category}" method="post">
+			<p>Name: <input type="text" th:field="*{name}" class="form-control"/></p>
+		
+			<!-- Näytetään validointivirheet -->
+			<p style="color: red;" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Virhe kategoriassa</p>
+		
+			<input type="submit" value="Submit" class="btn btn-primary"/> 
+			<input type="reset" value="Reset" class="btn btn-secondary"/>
+			
+			<a href="/categorylist" class="btn btn-primary">Näytä kategoriat</a>
+		</form>
+		
+    </div>
     
 </body>
 </html>
