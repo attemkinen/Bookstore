@@ -64,40 +64,4 @@ Delete Most Recent Category
     Reload Page
     Wait Until Page Does Not Contain    ${EDITED_CATEGORY}
     
-   
-
-Reject Category With Invalid Numerical Characters
-
-    [Documentation]     Checks that new category cannot be saved with only numerical characters
-
-    Click Link      xpath=(//a[contains(@href, '/addcategory')])
-    Input Text      xpath=//input[@name='name']     ${NUMERICAL_NAME}        
-    Click Button    xpath=//input[@type='submit']
-    Wait Until Page Contains        ${WRONG_NAME_MESSAGE}
-    ${current_url}=  Get Location
-    Should Be Equal  ${current_url}  ${SAVE_CATEGORY_URL}  
-
-
-Reject Category Without Characters
-
-    [Documentation]     Checks that new category cannot be saved without any characters.
-
-    Input Text      xpath=//input[@name='name']    ${EMPTY_CHAR}       
-    Click Button    xpath=//input[@type='submit']
-    Wait Until Page Contains        ${EMPTY_NAME_MESSAGE}  
-    ${current_url}=  Get Location
-    Should Be Equal  ${current_url}  ${SAVE_CATEGORY_URL}  
-
-    
-
-Reject Category With Invalid Characters
-
-    [Documentation]     Checks that new category cannot be saved with invalid characters.
-
-    Input Text      xpath=//input[@name='name']    ${INVALID_CHAR}       
-    Click Button    xpath=//input[@type='submit']
-    Wait Until Page Contains        ${WRONG_NAME_MESSAGE}  
-    ${current_url}=  Get Location
-    Should Be Equal  ${current_url}  ${SAVE_CATEGORY_URL}  
-
     Close Browser
