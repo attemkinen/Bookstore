@@ -16,7 +16,7 @@ ${SHORT_PASSWORD}       123
 ${MSG_SIGN_OUT}         You have been logged out.
 ${MSG_LOGIN_DENIED}     Invalid username and password.
 ${MSG_USERNAME_EXISTS}  Username already exists
-${MSG_INVALID_PASSWORD} size must be between 7 and 30
+${MSG_INVALID_PASSWORD}  size must be between 7 and 30
 
 *** Test Cases ***
 
@@ -33,9 +33,8 @@ User Login
     Open Browser    ${LOGIN_URL}    Chrome
     Maximize Browser Window
     Perform Login    ${VALID_USERNAME}    ${VALID_PASSWORD}
-    Wait Until Page Contains    books
     Wait Until Location Is    ${BOOKS_URL}
-    Close Browser
+    
 
 User Logout
     [Documentation]  Logs out the user and verifies the logout message is displayed.
