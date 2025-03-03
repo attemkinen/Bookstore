@@ -9,22 +9,36 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.*;
 
 @Entity
 public class Book {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	private String title, author, isbn;
-	private double price;
-	private int published;
-	
-	@ManyToOne
-	@JsonIgnoreProperties ("booksjson")
-	@JoinColumn ( name = "categoryid")
-	private Category category;
-	
-	public Book() {}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @NotBlank(message = "Title cannot be empty")
+    private String title;
+
+    @NotBlank(message = "Author cannot be empty")
+    private String author;
+
+    @Pattern(regexp = "\\d{3}-\\d{3}-\\d{3}-\\d{4}", message = "Invalid ISBN format (expected: 123-456-789-0123)")
+    private String isbn;
+
+    @Min(value = 0, message = "Price must be a positive number")
+    private double price;
+
+    @Min(value = 1000, message = "Year must be at least 1000")
+    @Max(value = 2025, message = "Year cannot be in the future")
+    private int published;
+
+    @ManyToOne
+    @JsonIgnoreProperties("booksjson")
+    @JoinColumn(name = "categoryid")
+    private Category category;
+
+    public Book() {}
 	
 	
 	public Book(String title, String author, String isbn, double price, int published, Category category) {
