@@ -14,7 +14,7 @@ ${ADMIN_PASSWORD}   admin
 # Book Data (Original)
 ${BOOK_TITLE}       Test Book
 ${BOOK_AUTHOR}      John Doe
-${BOOK_ISBN}        951-1-12345-8        
+${BOOK_ISBN}        123-345-788-9990       
 ${BOOK_PRICE}       20.00
 ${BOOK_YEAR}        2025
 ${BOOK_CATEGORY}    Drama
@@ -22,7 +22,7 @@ ${BOOK_CATEGORY}    Drama
 # Book Data (Edited)
 ${EDITED_TITLE}     Updated Book
 ${EDITED_AUTHOR}    Jane Doe
-${EDITED_ISBN}      111-1-11111-1        
+${EDITED_ISBN}      987-543-887-9999        
 ${EDITED_PRICE}     25.00
 ${EDITED_YEAR}      2024
 
