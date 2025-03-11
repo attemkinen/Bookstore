@@ -36,7 +36,7 @@ Admin Login
     Input Text      name=username   ${ADMIN_USERNAME}
     Input Text      name=password   ${ADMIN_PASSWORD}
     Click Button    xpath=//input[@type='submit']
-    
+    Wait Until Element Is Visible    xpath=//h3
     ${welcome_text}=    Get Text    xpath=//h3
     Should Contain    ${welcome_text}    Welcome ${ADMIN_USERNAME}
 

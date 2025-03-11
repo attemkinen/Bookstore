@@ -22,7 +22,6 @@ User Registration
     Open Browser    ${SIGNUP_URL}    Chrome
     Maximize Browser Window
     Fill Registration Form    ${VALID_USERNAME}    ${VALID_PASSWORD}    ${VALID_PASSWORD}
-    Click Button    xpath=//input[@type='submit']
     Wait Until Location Is    ${LOGIN_URL}
     Close Browser
 
@@ -31,7 +30,6 @@ User Registration With Existing Username
     Open Browser    ${SIGNUP_URL}    Chrome
     Maximize Browser Window
     Fill Registration Form    ${VALID_USERNAME}    ${VALID_PASSWORD}    ${VALID_PASSWORD}
-    Click Button    xpath=//input[@type='submit']
     Wait Until Page Contains    ${MSG_USERNAME_EXISTS}
     Close Browser
 
@@ -51,6 +49,8 @@ Fill Registration Form
     Input Text    xpath=//input[@name='username']    ${username}
     Input Text    xpath=//input[@name='password']    ${password}
     Input Text    xpath=//input[@name='passwordCheck']    ${password_check}
+    Click Button    xpath=//input[@type='submit']
+    Sleep    1s    # Varmistetaan, että sivu ehtii päivittyä
 
 Wait Until Location Is
     [Arguments]    ${expected_url}
